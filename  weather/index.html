@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkyCast Weather Forecasting</title>
+  <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#dashboard" aria-label="SkyCast home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>
+          <strong>SkyCast</strong>
+          <small>Real-time weather alerts</small>
+        </span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="#dashboard">Dashboard</a>
+        <a href="#forecast">Forecast</a>
+        <a href="#alerts">Alerts</a>
+        <a href="#system">System</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="dashboard" id="dashboard">
+        <div class="hero-copy">
+          <p class="eyebrow">OpenWeatherMap style forecasting interface</p>
+          <h1>Plan your day with fast local forecasts and clear weather alerts.</h1>
+          <p class="lead">SkyCast displays temperature, humidity, wind speed, pressure, precipitation, and severe-weather notices in a responsive interface inspired by the supplied project deck.</p>
+
+          <form class="search-panel" id="searchForm">
+            <label for="cityInput">Search location</label>
+            <div class="search-row">
+              <input id="cityInput" name="city" type="search" value="Chennai" autocomplete="off" placeholder="Try Chennai, Mumbai, Delhi, Bengaluru">
+              <button type="submit">Update</button>
+            </div>
+            <p id="searchHint">Sample data is available for Chennai, Mumbai, Delhi, Bengaluru, Hyderabad, and Kolkata.</p>
+          </form>
+        </div>
+
+        <section class="weather-station" aria-label="Current weather">
+          <div class="station-head">
+            <div>
+              <p id="conditionLabel" class="condition">Partly cloudy</p>
+              <h2 id="locationName">Chennai, India</h2>
+            </div>
+            <button class="unit-toggle" id="unitToggle" type="button" aria-pressed="false">°C</button>
+          </div>
+
+          <div class="current-grid">
+            <div class="temp-readout">
+              <span id="weatherIcon" class="weather-icon sun-cloud" aria-hidden="true"></span>
+              <strong id="temperature">31°</strong>
+              <span id="feelsLike">Feels like 34°</span>
+            </div>
+
+            <div class="metrics" aria-label="Weather measurements">
+              <article>
+                <span>Humidity</span>
+                <strong id="humidity">72%</strong>
+              </article>
+              <article>
+                <span>Wind</span>
+                <strong id="wind">16 km/h</strong>
+              </article>
+              <article>
+                <span>Pressure</span>
+                <strong id="pressure">1008 hPa</strong>
+              </article>
+              <article>
+                <span>Rain</span>
+                <strong id="rain">38%</strong>
+              </article>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <section class="forecast-band" id="forecast">
+        <div class="section-title">
+          <p class="eyebrow">Five-day outlook</p>
+          <h2>Forecast timeline</h2>
+        </div>
+        <div class="forecast-strip" id="forecastList" aria-live="polite"></div>
+      </section>
+
+      <section class="insight-grid" id="alerts">
+        <article class="alert-panel">
+          <div class="section-title">
+            <p class="eyebrow">Safety layer</p>
+            <h2>Weather alerts</h2>
+          </div>
+          <div id="alertStatus" class="alert-status"></div>
+        </article>
+
+        <article class="map-panel">
+          <div class="map-header">
+            <span>Live condition map</span>
+            <strong id="mapCity">Chennai</strong>
+          </div>
+          <div class="map-surface" aria-hidden="true">
+            <span class="map-pin pin-primary"></span>
+            <span class="map-pin pin-secondary"></span>
+            <span class="map-pin pin-third"></span>
+            <span class="wind-line line-one"></span>
+            <span class="wind-line line-two"></span>
+            <span class="wind-line line-three"></span>
+          </div>
+        </article>
+
+        <article class="history-panel">
+          <div class="section-title">
+            <p class="eyebrow">Recent searches</p>
+            <h2>Location history</h2>
+          </div>
+          <ul id="historyList"></ul>
+        </article>
+      </section>
+
+      <section class="system-band" id="system">
+        <div class="section-title">
+          <p class="eyebrow">Project blueprint</p>
+          <h2>SkyCast system model</h2>
+        </div>
+
+        <div class="system-grid">
+          <article>
+            <h3>User workflow</h3>
+            <ol>
+              <li>Search a location</li>
+              <li>View current weather</li>
+              <li>Check forecast</li>
+              <li>Receive alert guidance</li>
+            </ol>
+          </article>
+          <article>
+            <h3>Measurements</h3>
+            <ul>
+              <li>Temperature sensor</li>
+              <li>Humidity sensor</li>
+              <li>Pressure sensor</li>
+              <li>Rain sensor</li>
+            </ul>
+          </article>
+          <article>
+            <h3>Technology</h3>
+            <ul>
+              <li>HTML and CSS frontend</li>
+              <li>JavaScript interactions</li>
+              <li>Weather API ready</li>
+              <li>Responsive on any device</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
