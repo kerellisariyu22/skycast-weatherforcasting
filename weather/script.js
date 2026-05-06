@@ -168,7 +168,7 @@ function normalizeCity(value) {
 }
 
 function hasApiKey() {
-  return OPENWEATHER_API_KEY && OPENWEATHER_API_KEY !== "ded8ab8a5a8fac3215dc40a22592b84e";
+  return OPENWEATHER_API_KEY && OPENWEATHER_API_KEY !== "PASTE_YOUR_API_KEY";
 }
 
 function getWeatherIcon(condition) {
